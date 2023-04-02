@@ -1,0 +1,26 @@
+Catch data
+ID       int    `json:"id"`
+Species  string `json:"species"`
+Weight   int    `json:"weight"`
+Length   int    `json:"length"`
+Username string `json:"username"`
+
+// get all catches
+http://localhost:8083/catches/
+
+// get catch by ID
+http://localhost:8083/catches/id/1
+
+// get catches by species
+http://localhost:8083/catches/species/bluegill
+
+// get catches by username
+http://localhost:8083/catches/username/jackHancock
+
+// add a catch
+curl http://localhost:8083/catches \
+    --include \
+    --header "Content-Type: application/json" \
+    --request "POST" \
+    --data '{"Species": "Walleye","weight": 14.1,"length": 49.99, "username": "jackHancock"}'
+
